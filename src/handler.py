@@ -9,7 +9,7 @@ def hello(event, context):
     plurkAPI.authorize(os.environ['PLURK_ACCESS_TOKEN'], os.environ['PLRUK_ACCESS_SECRET'])
 
     query = os.environ['QUERY']
-    max_size = os.environ['MAX_SIZE']
+    max_size = int(os.environ['MAX_SIZE'])
     offset = 0
     while offset < max_size:
         results = plurkAPI.callAPI('/APP/PlurkSearch/search',
